@@ -12,6 +12,7 @@ source /usr/share/yunohost/helpers
 #=================================================
 
 email=$(ynh_user_get_info --username=$admin --key=mail)
+key=$(ynh_string_random --length=45 | base64)
 
 ynh_app_setting_set --key=php_upload_max_filesize --value=50M
 ynh_app_setting_set --key=php_post_max_size --value=50M
@@ -61,7 +62,6 @@ ynh_composer_exec install --no-dev --optimize-autoloader
 ynh_script_progression "Install $app"
 
 pushd $install_dir
-	php$php_version bin/console app:secret
 	php$php_version bin/console doctrine:migrations:migrate --no-interaction
 	php$php_version bin/console db:seeds:load
 	php$php_version bin/console app:users:create --email="$email" --password="$password"

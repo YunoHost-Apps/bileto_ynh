@@ -13,7 +13,7 @@ maintainers = ["eric_G"]
 
 [upstream]
 license = "AGPL-3.0"
-website = "https://bileto.fr/"
+website = "https://bileto.coop/"
 admindoc = "https://github.com/Probesys/bileto/blob/main/docs/administrators/deploy.md"
 code = "https://github.com/Probesys/bileto"
 
@@ -69,7 +69,8 @@ ram.runtime = "50M"
     autoupdate.strategy = "latest_github_tag"
 
     [resources.system_user]
-
+    allow_email = true
+    
     [resources.install_dir]
     group = "www-data:r-x"
 
