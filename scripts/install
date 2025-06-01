@@ -11,11 +11,6 @@ source /usr/share/yunohost/helpers
 # INITIALIZE AND STORE SETTINGS
 #=================================================
 
-# If you need to, you can define custom settings
-# (or remove this section entirely if not relevant for you)
-foo="bar"
-ynh_app_setting_set --key=foo --value=$foo
-
 email=$(ynh_user_get_info --username=$admin --key=mail)
 
 ynh_app_setting_set --key=php_upload_max_filesize --value=50M
@@ -50,13 +45,7 @@ ynh_config_add_nginx
 # Create a dedicated systemd config
 ynh_config_add_systemd
 
-yunohost service add "$app" --description="A short description of the app" --log="/var/log/$app/$app.log"
-
-# Use logrotate to manage application logfile(s)
-#ynh_config_add_logrotate
-
-# Create a dedicated Fail2Ban config
-#ynh_config_add_fail2ban --logpath="/var/log/nginx/${domain}-error.log" --failregex="Regex to match into the log for a failed login"
+yunohost service add "$app" --description="Ticketing tool for managing your Help Desk" --log="/var/log/$app/$app.log"
 
 #=================================================
 # INSTALL BILETO WITH COMPOSER
@@ -67,7 +56,7 @@ ynh_composer_install
 ynh_composer_exec install --no-dev --optimize-autoloader
 
 #=================================================
-# FINAL BOOKSTACK INSTALL
+# FINAL BILETO INSTALL
 #=================================================
 ynh_script_progression "Install $app"
 
