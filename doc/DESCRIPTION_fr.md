@@ -1,4 +1,4 @@
-Bileto est un outil de billetterie. Il est conçu pour vous aider à gérer votre support aussi efficacement que possible. Il vous permet de :
+Bileto est un outil de billetterie. Il est conçu pour vous aider à gérer votre support aussi efficacement que possible.
 
 ### Fearures
 
