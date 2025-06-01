@@ -11,11 +11,6 @@ source /usr/share/yunohost/helpers
 # INITIALIZE AND STORE SETTINGS
 #=================================================
 
-# If you need to, you can define custom settings
-# (or remove this section entirely if not relevant for you)
-foo="bar"
-ynh_app_setting_set --key=foo --value=$foo
-
 email=$(ynh_user_get_info --username=$admin --key=mail)
 
 ynh_app_setting_set --key=php_upload_max_filesize --value=50M
