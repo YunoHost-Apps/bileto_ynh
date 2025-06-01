@@ -10,7 +10,7 @@ It shall NOT be edited by hand.
 
 Ticketing tool for managing your Help Desk
 
-[![🌐 Official app website](https://img.shields.io/badge/Official_app_website-darkgreen?style=for-the-badge)](https://bileto.fr/)
+[![🌐 Official app website](https://img.shields.io/badge/Official_app_website-darkgreen?style=for-the-badge)](https://bileto.coop/)
 [![Version: 0.14.0~ynh1](https://img.shields.io/badge/Version-0.14.0~ynh1-rgba(0,150,0,1)?style=for-the-badge)](https://ci-apps.yunohost.org/ci/apps/bileto/)
 
 <div align="center">
