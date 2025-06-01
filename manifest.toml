@@ -1,0 +1,86 @@
+#:schema https://raw.githubusercontent.com/YunoHost/apps/main/schemas/manifest.v2.schema.json
+
+packaging_format = 2
+
+id = "bileto"
+name = "Bileto"
+description.en = "Ticketing tool for managing your Help Desk"
+description.fr = "Expliquez en *quelques* (10~15) mots l'utilité de l'app ou ce qu'elle fait (l'objectif est de donner une idée grossière pour des utilisateurs qui naviguent dans un catalogue de 100+ apps)"
+
+version = "0.14.0~ynh1"
+
+maintainers = ["eric_G"]
+
+[upstream]
+license = "AGPL-3.0"
+website = "https://bileto.fr/"
+admindoc = "https://github.com/Probesys/bileto/blob/main/docs/administrators/deploy.md"
+userdoc = "https://yunohost.org/apps"
+code = "https://github.com/Probesys/bileto"
+
+[integration]
+yunohost = ">= 12.0.9"
+helpers_version = "2.1"
+architectures = "all"
+multi_instance = true
+
+ldap = false
+
+sso = false
+
+disk = "50M"
+ram.build = "50M"
+ram.runtime = "50M"
+
+[install]
+    [install.domain]
+    type = "domain"
+
+    #[install.path]
+    #type = "path"
+    #default = "/example"
+
+    [install.init_main_permission]
+    type = "group"
+    default = "visitors"
+
+    [install.language]
+    ask.en = "Choose the application language"
+    ask.fr = "Choisissez la langue de l'application"
+    type = "select"
+    choices = ["fr_FR", "en_GB"]
+    default = "fr_FR"
+
+    [install.admin]
+    type = "user"
+
+    [install.password]
+    help.en = "Use the help field to add an information for the admin about this question."
+    help.fr = "Utilisez le champ aide pour ajouter une information à l'intention de l'administrateur à propos de cette question."
+    type = "password"
+
+[resources]
+
+    [resources.sources]
+
+    [resources.sources.main]
+    url = "https://github.com/Probesys/bileto/archive/refs/tags/0.14.0.tar.gz"
+    sha256 = "3b32e21a412895fd17ed61f0b57fa72846b1624ab1433d46e4896e14f2ec6b1d"
+
+    autoupdate.strategy = "latest_github_tag"
+
+    [resources.system_user]
+
+    [resources.install_dir]
+    group = "www-data:r-x"
+
+    [resources.data_dir]
+
+    [resources.permissions]
+    main.url = "/"
+
+    [resources.apt]
+    packages = "postgresql, php8.4-ldap, php8.4-imap, php8.4-intl, php8.4-zip, php8.4-curl, php8.4-gd, php8.4-cli, php8.4-pgsql, php8.4-xml, php8.4-mbstring"
+
+    [resources.database]
+    type = "postgresql"
