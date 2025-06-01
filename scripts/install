@@ -64,7 +64,7 @@ pushd $install_dir
 	php$php_version bin/console app:secret
 	php$php_version bin/console doctrine:migrations:migrate --no-interaction
 	php$php_version bin/console db:seeds:load
-	php$php_version bin/console app:users:create --email="$email" --name="$admin" --password="$password"
+	php$php_version bin/console app:users:create --email="$email" --password="$password"
 popd
 
 #=================================================
