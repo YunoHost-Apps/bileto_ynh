@@ -27,14 +27,14 @@ ynh_app_setting_set_default --key=php_post_max_size --value=50M
 #=================================================
 ynh_script_progression "Upgrading source files..."
 
-ynh_setup_source --dest_dir="$install_dir" --full_replace --keep=".env.local"
+ynh_setup_source --dest_dir="$install_dir" --keep=".env.local" #--full_replace
 
 #=================================================
 # UPDATE A CONFIG FILE
 #=================================================
-ynh_script_progression "Updating $app's configuration files..."
+#ynh_script_progression "Updating $app's configuration files..."
 
-ynh_config_add --template=".env" --destination="$install_dir/.env.local"
+#ynh_config_add --template=".env" --destination="$install_dir/.env.local"
 
 #=================================================
 # REAPPLY SYSTEM CONFIGURATION
@@ -47,11 +47,28 @@ ynh_config_add_nginx
 
 ynh_config_add_systemd
 
-yunohost service add "$app" --description="A short description of the app" --log="/var/log/$app/$app.log"
+yunohost service add "$app" --description="Ticketing tool for managing your Help Desk" --log="/var/log/$app/$app.log"
 
 #ynh_config_add_logrotate
 
 #ynh_config_add_fail2ban --logpath="/var/log/nginx/${domain}-error.log" --failregex="Regex to match into the log for a failed login"
+
+#=================================================
+# INSTALL BILETO WITH COMPOSER
+#=================================================
+ynh_script_progression "Installing $app with Composer..."
+
+ynh_composer_install
+ynh_composer_exec install --no-dev --optimize-autoloader
+
+#=================================================
+# FINAL BILETO INSTALL
+#=================================================
+ynh_script_progression "Install $app"
+
+pushd $install_dir
+	php$php_version bin/console doctrine:migrations:migrate --no-interaction
+popd
 
 #=================================================
 # START SYSTEMD SERVICE

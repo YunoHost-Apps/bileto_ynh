@@ -50,7 +50,7 @@ ynh_config_add_nginx
 # Create a dedicated systemd config
 ynh_config_add_systemd
 
-yunohost service add "$app" --description="A short description of the app" --log="/var/log/$app/$app.log"
+yunohost service add "$app" --description="Ticketing tool for managing your Help Desk" --log="/var/log/$app/$app.log"
 
 # Use logrotate to manage application logfile(s)
 #ynh_config_add_logrotate
@@ -67,7 +67,7 @@ ynh_composer_install
 ynh_composer_exec install --no-dev --optimize-autoloader
 
 #=================================================
-# FINAL BOOKSTACK INSTALL
+# FINAL BILETO INSTALL
 #=================================================
 ynh_script_progression "Install $app"
 
