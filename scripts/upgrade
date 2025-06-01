@@ -49,10 +49,6 @@ ynh_config_add_systemd
 
 yunohost service add "$app" --description="Ticketing tool for managing your Help Desk" --log="/var/log/$app/$app.log"
 
-#ynh_config_add_logrotate
-
-#ynh_config_add_fail2ban --logpath="/var/log/nginx/${domain}-error.log" --failregex="Regex to match into the log for a failed login"
-
 #=================================================
 # INSTALL BILETO WITH COMPOSER
 #=================================================
