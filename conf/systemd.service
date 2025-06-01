@@ -2,8 +2,8 @@
 Description=The Messenger worker for Bileto
 
 [Service]
-User=www-data
-Group=www-data
+User=__APP__
+Group=__APP__
 WorkingDirectory=__INSTALL_DIR__/
 ExecStart=php__PHP_VERSION__ __INSTALL_DIR__/bin/console messenger:consume async scheduler_default --time-limit=3600
 Restart=always
