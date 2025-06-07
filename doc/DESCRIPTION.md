@@ -1,4 +1,4 @@
-Bileto is a ticketing tool. It is designed to help you to manage your support as efficiently as possible. It allows you to:
+Bileto is a ticketing tool. It is designed to help you to manage your support as efficiently as possible.
 
 ### Fearures
 
