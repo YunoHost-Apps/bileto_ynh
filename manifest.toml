@@ -5,7 +5,7 @@ packaging_format = 2
 id = "bileto"
 name = "Bileto"
 description.en = "Ticketing tool for managing your Help Desk"
-description.fr = "Outil de billetterie pour la gestion de votre service d'assistance"
+description.fr = "Outil de ticketing pour la gestion de votre service d'assistance"
 
 version = "0.15.1~ynh1"
 
