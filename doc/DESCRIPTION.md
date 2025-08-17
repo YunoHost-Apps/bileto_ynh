@@ -1,6 +1,6 @@
 Bileto is a ticketing tool. It is designed to help you to manage your support as efficiently as possible.
 
-### Fearures
+### Features
 
 - Manage your tickets (create, answer, manage their lifecycle) in a modern way (clear timeline, efficient lists, powerful search engine);
 - Isolate your users and tickets in organizations;
