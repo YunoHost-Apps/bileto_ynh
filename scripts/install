@@ -4,7 +4,7 @@
 # IMPORT GENERIC HELPERS
 #=================================================
 
-source _common.sh
+
 source /usr/share/yunohost/helpers
 
 #=================================================
@@ -53,7 +53,7 @@ yunohost service add "$app" --description="Ticketing tool for managing your Help
 #=================================================
 ynh_script_progression "Installing $app with Composer..."
 
-ynh_composer_install
+#REMOVEME? ynh_composer_install
 ynh_composer_exec install --no-dev --optimize-autoloader
 
 #=================================================
