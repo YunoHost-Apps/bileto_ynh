@@ -7,7 +7,7 @@ name = "Bileto"
 description.en = "Ticketing tool for managing your Help Desk"
 description.fr = "Outil de ticketing pour la gestion de votre service d'assistance"
 
-version = "0.16.5~ynh1"
+version = "0.16.6~ynh1"
 
 maintainers = ["eric_G"]
 
@@ -62,8 +62,8 @@ ram.runtime = "50M"
     [resources.sources]
 
     [resources.sources.main]
-    url = "https://github.com/Probesys/bileto/archive/refs/tags/0.16.5.tar.gz"
-    sha256 = "bc20af9680d40c43392ca1d4facc5217f05f40394bb6b63acf19693f1afc22ea"
+    url = "https://github.com/Probesys/bileto/archive/refs/tags/0.16.6.tar.gz"
+    sha256 = "33bda19dd60a589307b807b789f7a4d2908da032bd2abfa63bdfc2164b1bf46a"
 
     autoupdate.strategy = "latest_github_tag"
 
